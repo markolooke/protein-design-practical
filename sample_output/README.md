@@ -23,7 +23,30 @@ A miniprotein designed against **ubiquitin (1UBQ chain A)**, aimed at the
 | `4_sequences.txt` | both sequences, ready to paste into AlphaFold Server |
 
 **How it scored:** ipTM **0.534** (weak), interface pAE **3.30 Å**,
-liabilities: ProtTrypx8(pos6-45,sev10) (8 violations). The binder is 52 residues.
+liabilities: ProtTrypx8(pos6-45,sev10) (8 violations). The binder is 52 residues and
+resembles the target **27%** — so it is its own protein.
+
+### Two of the eight designs are copies of the target
+
+This run is a good example of the shortcut these models take. Resemblance to the
+target, across all eight designs:
+
+| design | ipTM | resembles the target |
+|---|---|---|
+| `design_3` | 0.170 | **76%** |
+| `design_0` | 0.143 | **66%** |
+| `design_4` | 0.209 | **41%** |
+| `design_5` | 0.534 | **27%** |
+| `design_6` | 0.233 | **23%** |
+| `design_7` | 0.293 | **22%** |
+| `design_2` | 0.216 | **20%** |
+| `design_1` | 0.514 | **18%** |
+
+Unrelated proteins score 15–25% on this measure. `design_3` at
+**76%** and `design_0` at **66%** are not binders
+at all — they are near-copies of ubiquitin, which of course docks nicely
+against ubiquitin. Both ranked near the bottom on ipTM, so the scoring caught
+them, but a student sorting on sequence plausibility alone would not have.
 
 ```
 open 2_design_top.cif
