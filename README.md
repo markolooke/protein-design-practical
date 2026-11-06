@@ -89,10 +89,12 @@ open 1UBQ                                    fetch the target from the PDB
 open ~/Downloads/design.cif                  your design
 
 color bfactor palette alphafold key true     AlphaFold models  (pLDDT 0-100)
-color bfactor palette esmfold key true       BoltzGen .cif     (pLDDT 0-1)
+
 
 alphafold pae #1 file fold_..._full_data_0.json    the PAE plot (ChimeraX 1.8+)
 alphafold contacts #1/B toAtoms #1/A maxPae 5      only the confident contacts
+alphafold contacts #1/B to #1/A distance 4         only pAE values for close atoms (4A)
+
 
 matchmaker #2 to #1                          superimpose, RMSD goes to the Log
 color #1/A gray; color #1/B orange           target grey, your binder orange
